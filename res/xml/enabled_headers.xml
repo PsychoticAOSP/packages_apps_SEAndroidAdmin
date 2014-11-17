@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<preference-headers
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Policy Update Fragment -->
+    <header android:id="@+id/update_category"
+        android:title="@string/update_category_title" />
+
+    <header android:id="@+id/config_update_mmac"
+        android:fragment="com.android.seandroid_admin.ConfigUpdateFragment"
+        android:title="@string/config_update_mmac_title" />
+
+    <!-- EOps Fragment -->
+    <header android:id="@+id/update_category"
+        android:title="@string/mmac_category_title" />
+
+    <header android:id="@+id/config_update_mmac"
+        android:fragment="com.android.seandroid_admin.appops.AppOpsSummary"
+        android:title="@string/config_eops_mmac_title" />
+
+    <!-- About Fragment -->
+    <header android:id="@+id/about_category"
+        android:title="@string/about_category_title" />
+
+    <header android:id="@+id/config_about"
+        android:fragment="com.android.seandroid_admin.AboutFragment"
+        android:title="@string/config_about_title" />
+
+</preference-headers>

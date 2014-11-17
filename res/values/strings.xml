@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="app_name">SEAdmin</string>
+    <string name="activity_name">SEAdmin</string>
+
+    <!-- Update Categories -->
+    <string name="update_category_title">Policy Update Options</string>
+    <string name="config_kernel_reload_title">Reload Kernel Policies</string>
+    <string name="config_update_mmac_title">Kernel and MMAC Policy</string>
+    <string name="config_eop_reload_title">Reload Eops Policy</string>
+    <string name="config_ifw_reload_title">Reload Intent Firewall Policy</string>
+    <string name="selinux_policy_reload">Reload Selinux Policies</string>
+    <string name="mmac_policy_reload">Reload MMAC Policies</string>
+
+    <!-- About/Help Categories -->
+    <string name="about_category">About</string>
+    <string name="about_category_title">Info</string>
+    <string name="config_about_title">About</string>
+
+    <string name="about">    SEAdmin provides policy reload functionality utilizing AOSPs ConfigUpdater
+                         mechanism. Presently, it provides 4 types of policy reload options.\n\n
+
+                         * <font fgcolor="cyan">Kernel</font> : selinux policy updates for file_contexts,
+                         seapp_contexts, sepolicy, property_contexts and mac_permissions.xml files.\n
+                         * <font fgcolor="cyan">Eops</font> : policy supports enterprise controls over certain
+                         runtime application operations that build upon AppOps functionality. Applied via
+                         eops.xml file.\n
+                         * <font fgcolor="cyan">IntentFirewall</font> : policy to place restrictions on ICC.
+                         Ability to restrict starting activities, starting and stopping services, and
+                         broadcasting intents. Applied via ifw.xml file.\n\n
+
+                             All policy reloads are handled by supplying a signed bundle that must first be
+                         shipped to the device and then broadcast to interested receivers. Each interested
+                         receiver validates the bundle and then unpacks the policy files from it under
+                         /data/security. The intent firewall policy will actually get installed to
+                         /data/system/ifw though. A suite of tools are available to help in the construction of
+                         each type of policy bundle. For each type of policy reload option there is a
+                         corresponding buildbundle script that will build the correct policy bundle
+                         zip file and metadata file required by the ConfigUpdater mechanism. In order
+                         to utilize the suite of buildbundle tools for policy reloads you must first
+                         build each tool in turn; buildsebundle for kernel bundles, buildpermsbundle
+                         for install-time bundles, buildeopbundle for enterprise ops bundles, and
+                         buildifwbundle for intent firewall bundles. SEAdmin handles all broadcasts
+                         and policy triggers, only requiring a policy bundle placed on the sdcard
+                         in order to be applied.\n\n
+
+                             If you opened SEAdmin with the hope of toggling enforcing status or booleans,
+                         that functionality has been dropped. Recent policy advances have now
+                         restricted who can toggle SELinux enforcing mode and as such the ability
+                         has been dropped from SEAdmin. A similar change has recently appeared for
+                         our MMAC enforcing mode too. Since install-time MAC code is always in enforcing
+                         mode, SEAdmin\'s ability to switch that mode has been dropped. Further,
+                         SEAdmin\'s device admin hooks have been deprecated and as such all
+                         admin features including reload options through DPMS have been dropped.\n\n
+
+                         Please check external documentation at http://selinuxproject.org/page/SEAndroid
+                         for further details concerning SEAdmin and policy reload abilities.
+    </string>
+
+    <!-- Middleware Ops -->
+    <string name="mmac_category_title">Middleware Ops</string>
+    <string name="config_eops_mmac_title">AppOps</string>
+
+    <string name="app_ops_settings">App ops</string>
+    <string name="app_ops_running">Running</string>
+    <string name="app_ops_never_used">(Never used)</string>
+    <string name="version_text">version <xliff:g id="version_num">%1$s</xliff:g></string>
+
+</resources>

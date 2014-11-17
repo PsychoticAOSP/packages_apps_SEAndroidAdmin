@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.android.seandroid_admin"
+    android:versionCode="3"
+    android:versionName="1.0">
+
+    <!-- Reload policy related -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <!-- AppOps related -->
+    <uses-permission android:name="android.permission.GET_APP_OPS_STATS" />
+    <uses-permission android:name="android.permission.UPDATE_APP_OPS_STATS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application android:label="@string/app_name"
+                 android:requiredAccountType="*">
+
+        <activity android:name="SEAndroidAdminActivity"
+            android:label="@string/activity_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name="BootReceiver">
+          <intent-filter>
+            <action android:name="android.intent.action.BOOT_COMPLETED" />
+          </intent-filter>
+        </receiver>
+
+        <provider android:name="android.support.v4.content.FileProvider"
+                  android:authorities="com.android.seandroid_admin.fileprovider"
+                  android:exported="false"
+                  android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/policy_paths" />
+        </provider>
+
+    </application>
+
+</manifest>

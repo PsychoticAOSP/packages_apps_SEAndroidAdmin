@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <PreferenceCategory
+      android:title="@string/selinux_policy_reload">
+
+    <Preference android:id="@+id/kernel_config_reload"
+                android:title="@string/config_kernel_reload_title"
+                android:key="key_selinux_reload" />
+
+  </PreferenceCategory>
+
+  <PreferenceCategory
+      android:title="@string/mmac_policy_reload">
+
+    <Preference android:id="@+id/eop_config_reload"
+                android:title="@string/config_eop_reload_title"
+                android:key="key_eops_reload" />
+
+    <Preference android:id="@+id/ifw_config_reload"
+                android:title="@string/config_ifw_reload_title"
+                android:key="key_ifw_reload" />
+
+  </PreferenceCategory>
+
+</PreferenceScreen>
